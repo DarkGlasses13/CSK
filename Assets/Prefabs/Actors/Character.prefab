@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 8725373739494046972}
   - component: {fileID: 8098994777403065661}
   - component: {fileID: 63374171817017661}
+  - component: {fileID: 1913307395242016979}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -425,6 +426,18 @@ MonoBehaviour:
   _weapons: []
   _bandages: []
   _money: 0
+--- !u!114 &1913307395242016979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276106250193104124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650231322e4329d49a98afff31985a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7445769528791590334
 GameObject:
   m_ObjectHideFlags: 0

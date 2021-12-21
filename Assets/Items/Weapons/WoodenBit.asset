@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab288c3ead8a69f449ff1c3b4320353d, type: 3}
-  m_Name: Fists
+  m_Name: WoodenBit
   m_EditorClassIdentifier: 
-  _id: 0
-  _title: Fists
-  _looterSprite: {fileID: 0}
-  _weaponType: 0
-  _damage: 10
-  _icon: {fileID: 21300000, guid: 84aa67076ad087e4d9c8f4579773ec50, type: 3}
-  _vew: {fileID: 2767694383524844663, guid: 9ec41a2fda75fa64cb16ab3aa16d0032, type: 3}
+  _id: 2
+  _title: Wooden Bit
+  _looterSprite: {fileID: 21300000, guid: 1cc7d655fb88b824b8211b2339e0506e, type: 3}
+  _weaponType: 2
+  _damage: 40
+  _icon: {fileID: 21300000, guid: 1cc7d655fb88b824b8211b2339e0506e, type: 3}
+  _vew: {fileID: 5732485352843842005, guid: d3ee4451f8c511a4e97448765ca61e47, type: 3}

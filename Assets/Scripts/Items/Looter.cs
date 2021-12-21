@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -21,7 +22,8 @@ namespace Assets.Scripts
             else
             {
                 Destroy(gameObject);
-            } 
+                Debug.Log("Looter was destroyed. No item!");
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -29,12 +31,8 @@ namespace Assets.Scripts
             if (other.TryGetComponent<Inventory>(out Inventory inventory))
             {
                 inventory.Add(_item);
+                Destroy(gameObject);
             }
-        }
-
-        private void OnDestroy()
-        {
-            Debug.Log("Looter was destroyed. No item!");
         }
     }
 }

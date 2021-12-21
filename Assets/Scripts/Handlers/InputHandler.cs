@@ -51,6 +51,14 @@ namespace Assets.Scripts
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""7d474dc0-e192-43e9-9d15-298f531d0148"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -141,6 +149,39 @@ namespace Assets.Scripts
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""ScrollWheel"",
+                    ""id"": ""b2d3f474-c190-4b45-8e17-7f0583c89ed2"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""f5fd6eca-c67a-4041-9c01-2c35c33876e8"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""61abb196-fb5b-4039-a25e-9559ad95db08"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -170,6 +211,7 @@ namespace Assets.Scripts
             m_CharacterControls_Attack = m_CharacterControls.FindAction("Attack", throwIfNotFound: true);
             m_CharacterControls_Interect = m_CharacterControls.FindAction("Interect", throwIfNotFound: true);
             m_CharacterControls_Look = m_CharacterControls.FindAction("Look", throwIfNotFound: true);
+            m_CharacterControls_Scroll = m_CharacterControls.FindAction("Scroll", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -223,6 +265,7 @@ namespace Assets.Scripts
         private readonly InputAction m_CharacterControls_Attack;
         private readonly InputAction m_CharacterControls_Interect;
         private readonly InputAction m_CharacterControls_Look;
+        private readonly InputAction m_CharacterControls_Scroll;
         public struct CharacterControlsActions
         {
             private @InputHandler m_Wrapper;
@@ -231,6 +274,7 @@ namespace Assets.Scripts
             public InputAction @Attack => m_Wrapper.m_CharacterControls_Attack;
             public InputAction @Interect => m_Wrapper.m_CharacterControls_Interect;
             public InputAction @Look => m_Wrapper.m_CharacterControls_Look;
+            public InputAction @Scroll => m_Wrapper.m_CharacterControls_Scroll;
             public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -252,6 +296,9 @@ namespace Assets.Scripts
                     @Look.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
                     @Look.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
                     @Look.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
+                    @Scroll.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnScroll;
+                    @Scroll.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnScroll;
+                    @Scroll.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnScroll;
                 }
                 m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
                 if (instance != null)
@@ -268,6 +315,9 @@ namespace Assets.Scripts
                     @Look.started += instance.OnLook;
                     @Look.performed += instance.OnLook;
                     @Look.canceled += instance.OnLook;
+                    @Scroll.started += instance.OnScroll;
+                    @Scroll.performed += instance.OnScroll;
+                    @Scroll.canceled += instance.OnScroll;
                 }
             }
         }
@@ -287,6 +337,7 @@ namespace Assets.Scripts
             void OnAttack(InputAction.CallbackContext context);
             void OnInterect(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
+            void OnScroll(InputAction.CallbackContext context);
         }
     }
 }

@@ -10,6 +10,10 @@ namespace Assets.Scripts
         [SerializeField] private List<Bandage> _bandages = new List<Bandage>();
         [SerializeField] private int _money;
 
+        private const int _fistsID = 0;
+
+        public int WeaponCount => _weapons.Count;
+
         private void Awake()
         {
             Set();
@@ -17,8 +21,16 @@ namespace Assets.Scripts
 
         private void Set()
         {
-            _weapons = _preset.Weapons;
-            _bandages = _preset.Bandages;
+            foreach (Weapon weapon in _preset.Weapons)
+            {
+                _weapons.Add(weapon);
+            }
+
+            foreach (Bandage bandage in _preset.Bandages)
+            {
+                _bandages.Add(bandage);
+            }
+
             _money = _preset.Money;
         }
 
@@ -28,6 +40,7 @@ namespace Assets.Scripts
             {
                 case ItemType.Weapon:
                     _weapons.Add(addableItem as Weapon);
+                    _weapons.Sort();
                     break;
 
                 case ItemType.Bandage:
@@ -39,6 +52,16 @@ namespace Assets.Scripts
                     _money += addableMoney.Amount;
                     break;
             }
+        }
+
+        public void DropAll()
+        {
+
+        }
+
+        public Weapon GetWeapon(int id)
+        {
+            return _weapons[id];
         }
 
         public void UseBandage()

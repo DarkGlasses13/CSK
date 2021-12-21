@@ -1155,8 +1155,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 100
+  near clip plane: 0.01
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1321,15 +1321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4457188415168636729, guid: 162bbc8cbd119f9418da7f956e941374, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4457188415168636729, guid: 162bbc8cbd119f9418da7f956e941374, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4457188415168636729, guid: 162bbc8cbd119f9418da7f956e941374, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4457188415168636729, guid: 162bbc8cbd119f9418da7f956e941374, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -10,6 +10,7 @@ namespace Assets.Scripts
 
         private Camera _camera;
         private InputHandler _inputHandler;
+        private const float _minLookDistance = 1;
 
         private void Awake()
         {
@@ -28,8 +29,11 @@ namespace Assets.Scripts
                 _camera.transform.position.y)
             );
 
-            Look(cursorPosition, transform, _bodyRotationSpeed);
-            Look(new Vector3(cursorPosition.x, 1, cursorPosition.z), _head, _headRotationSpeed);
+            if (Vector3.Distance(transform.position, cursorPosition) > _minLookDistance)
+            {
+                Look(cursorPosition, transform, _bodyRotationSpeed);
+                Look(new Vector3(cursorPosition.x, 1, cursorPosition.z), _head, _headRotationSpeed);
+            }
         }
 
         private void Look(Vector3 target, Transform exceptor, float rotationSpeed)

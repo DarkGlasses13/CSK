@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72329aa11d3cf49b53628daefa0d0e, type: 3}
+  m_Name: StartPreset
+  m_EditorClassIdentifier: 
+  _database: {fileID: 11400000, guid: 1c933a1bcf6c8e54ab0d10d58794c742, type: 2}
+  _money: 100
+  _weaponPocket:
+  - {fileID: 11400000, guid: 5db9603eb200fab44a0345981867aa45, type: 2}
+  _bandagePocket: []

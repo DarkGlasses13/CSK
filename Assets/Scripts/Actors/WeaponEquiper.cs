@@ -8,7 +8,8 @@ namespace Assets.Scripts
     {
         public UnityEvent<Weapon> OnVew;
 
-        protected Weapon _equippedWeapon;
+        [SerializeField] protected Weapon _equippedWeapon;
+
         protected Inventory _inventory;
         protected int _selectedWeaponIndex;
 

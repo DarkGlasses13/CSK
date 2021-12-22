@@ -20,7 +20,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void Set(ItemDatabase database)
+        public void Set(ItemDatabase database, InventoryPreset preset)
         {
             foreach (Weapon weapon in database.GetWeapons())
             {

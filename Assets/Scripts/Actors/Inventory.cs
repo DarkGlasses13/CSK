@@ -11,8 +11,9 @@ namespace Assets.Scripts
         [SerializeField] private int _money;
 
         public int WeaponCount => _weapons.Count;
+        public int Money => _money;
 
-        public void Set(InventoryPreset preset)
+        public void Set(ItemDatabase itemDatabase, InventoryPreset preset)
         {
             foreach (Weapon weapon in preset.Weapons)
             {

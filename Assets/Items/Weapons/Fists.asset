@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _title: Fists
-  _looterSprite: {fileID: 0}
+  _looterSprite: {fileID: 21300000, guid: 84aa67076ad087e4d9c8f4579773ec50, type: 3}
   _weaponType: 0
   _damage: 10
   _icon: {fileID: 21300000, guid: 84aa67076ad087e4d9c8f4579773ec50, type: 3}

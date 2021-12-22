@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2465270636947348930}
   - component: {fileID: -7221364985229073408}
+  - component: {fileID: -2340852131635580488}
   m_Layer: 0
   m_Name: Fists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2465270636947348930
 Transform:
   m_ObjectHideFlags: 0
@@ -44,3 +45,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2340852131635580488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767694383524844663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c2e2e3399cf8446b4c0d34d12f883c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 11400000, guid: 5db9603eb200fab44a0345981867aa45, type: 2}

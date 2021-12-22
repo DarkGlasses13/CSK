@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    abstract class Item : ScriptableObject, IComparable
+    abstract class Item : ScriptableObject
     {
         [SerializeField] protected int _id;
         [SerializeField] protected string _title;
@@ -16,18 +16,6 @@ namespace Assets.Scripts
         public ItemType Type => _type;
         public int ID => _id;
         public string Title => _title;
-
-        public int CompareTo(object obj)
-        {
-            Item item = obj as Item;
-
-            if (item != null)
-            {
-                return _id.CompareTo(item.ID);
-            }
-
-            throw new Exception("Не удалось отсортировать");
-        }
     }
 
     public enum ItemType

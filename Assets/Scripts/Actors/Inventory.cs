@@ -3,35 +3,28 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(InventorySetter))]
     class Inventory : MonoBehaviour
     {
-        [SerializeField] private InventoryPreset _preset;
         [SerializeField] private List<Weapon> _weapons = new List<Weapon>();
         [SerializeField] private List<Bandage> _bandages = new List<Bandage>();
         [SerializeField] private int _money;
 
-        private const int _fistsID = 0;
-
         public int WeaponCount => _weapons.Count;
 
-        private void Awake()
+        public void Set(InventoryPreset preset)
         {
-            Set();
-        }
-
-        private void Set()
-        {
-            foreach (Weapon weapon in _preset.Weapons)
+            foreach (Weapon weapon in preset.Weapons)
             {
-                _weapons.Add(weapon);
+                Add(weapon);
             }
 
-            foreach (Bandage bandage in _preset.Bandages)
+            foreach (Bandage bandage in preset.Bandages)
             {
-                _bandages.Add(bandage);
+                Add(bandage);
             }
 
-            _money = _preset.Money;
+            _money = preset.Money;
         }
 
         public void Add(Item addableItem)
@@ -39,7 +32,8 @@ namespace Assets.Scripts
             switch (addableItem.Type)
             {
                 case ItemType.Weapon:
-                    _weapons.Add(addableItem as Weapon);
+                    Weapon addableWeapon = addableItem as Weapon;
+                    _weapons.Add(addableWeapon);
                     _weapons.Sort();
                     break;
 
@@ -54,14 +48,29 @@ namespace Assets.Scripts
             }
         }
 
+        public bool CanAdd(Item addableItem)
+        {
+            if (addableItem.Type == ItemType.Weapon)
+            {
+                foreach (Weapon weapon in _weapons)
+                {
+                    if (weapon.ID == addableItem.ID) { return false; }
+                }
+
+                return true;
+            }
+
+            return true;
+        }
+
         public void DropAll()
         {
 
         }
 
-        public Weapon GetWeapon(int id)
+        public Weapon GetWeapon(WeaponEquiper equiper)
         {
-            return _weapons[id];
+            return _weapons[equiper.SelectedWeaponIndex];
         }
 
         public void UseBandage()

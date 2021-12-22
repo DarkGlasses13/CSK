@@ -19,3 +19,4 @@ MonoBehaviour:
   _damage: 30
   _icon: {fileID: 21300000, guid: 51caa7e829531bf43b40b6e0939e983c, type: 3}
   _vew: {fileID: 8739235827798472846, guid: e2d90bfd5fa792e41b85e8b2cb651dcb, type: 3}
+  _inventoryQueue: 1

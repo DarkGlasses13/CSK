@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 728995316120800126}
   - component: {fileID: 930215874909802393}
+  - component: {fileID: 3853532515916961743}
   m_Layer: 0
   m_Name: WoodenBit
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3853532515916961743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732485352843842005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c2e2e3399cf8446b4c0d34d12f883c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 11400000, guid: 9a9331fb09b29994b94e1b77038282fd, type: 2}

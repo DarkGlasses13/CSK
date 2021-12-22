@@ -1,18 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Scripts
 {
-    [RequireComponent(typeof(Inventory))]
-    class ControllableWeaponEquiper : MonoBehaviour
+    class ControllableWeaponEquiper : WeaponEquiper
     {
-        [SerializeField] private Weapon _equippedWeapon;
-
         private InputHandler _inputHandler;
-        private Inventory _inventory;
-        [SerializeField] private int _selectedWeaponID;
-
-        public Weapon EquippedWeapon => _equippedWeapon;
 
         private void Awake()
         {
@@ -22,9 +14,20 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            _selectedWeaponID += (int)(_inputHandler.CharacterControls.Scroll.ReadValue<Vector2>().y);
-            _selectedWeaponID = Mathf.Clamp(_selectedWeaponID, 0, _inventory.WeaponCount);
+            int mouseScrollwheel = (int)_inputHandler.CharacterControls.Scroll.ReadValue<float>() / 120;
 
+            if (mouseScrollwheel != 0)
+            {
+                _selectedWeaponIndex += mouseScrollwheel;
+                _selectedWeaponIndex = Mathf.Clamp(_selectedWeaponIndex, 0, _inventory.WeaponCount - 1);
+                Equip();
+            }
+        }
+
+        public override void Equip()
+        {
+            _equippedWeapon = _inventory.GetWeapon(this);
+            OnVew.Invoke(_equippedWeapon);
         }
 
         private void OnEnable()

@@ -11,9 +11,11 @@ namespace Assets.Scripts
         [SerializeField] private int _money;
         [SerializeField] private List<Weapon> _weaponPocket = new List<Weapon>();
         [SerializeField] private List<Bandage> _bandagePocket = new List<Bandage>();
+        [SerializeField] private Weapon _equippedWeapon;
 
         public int Money => _money;
         public List<Weapon> Weapons => _weaponPocket;
         public List<Bandage> Bandages => _bandagePocket;
+        public Weapon EquippedWeapon => _equippedWeapon;
     }
 }

@@ -28,7 +28,7 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<Inventory>(out Inventory inventory))
+            if (other.TryGetComponent<Inventory>(out Inventory inventory) && inventory.CanAdd(_item))
             {
                 inventory.Add(_item);
                 Destroy(gameObject);

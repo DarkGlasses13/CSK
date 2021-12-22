@@ -54,9 +54,9 @@ namespace Assets.Scripts
                 },
                 {
                     ""name"": ""Scroll"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""7d474dc0-e192-43e9-9d15-298f531d0148"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -151,37 +151,15 @@ namespace Assets.Scripts
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""ScrollWheel"",
-                    ""id"": ""b2d3f474-c190-4b45-8e17-7f0583c89ed2"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""d18faf10-32cc-49fd-ad28-a40430a64310"",
+                    ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Mouse and keyboard"",
                     ""action"": ""Scroll"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""f5fd6eca-c67a-4041-9c01-2c35c33876e8"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse and keyboard"",
-                    ""action"": ""Scroll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""61abb196-fb5b-4039-a25e-9559ad95db08"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse and keyboard"",
-                    ""action"": ""Scroll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }

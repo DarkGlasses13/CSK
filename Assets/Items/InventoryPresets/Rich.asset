@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd72329aa11d3cf49b53628daefa0d0e, type: 3}
-  m_Name: StartPreset
+  m_Name: Rich
   m_EditorClassIdentifier: 
   _database: {fileID: 11400000, guid: 1c933a1bcf6c8e54ab0d10d58794c742, type: 2}
-  _money: 100
+  _money: 10000000
   _weaponPocket:
   - {fileID: 11400000, guid: 5db9603eb200fab44a0345981867aa45, type: 2}
-  _bandagePocket:
-  - {fileID: 11400000, guid: f76eebb916e769b408e66f550c36ea50, type: 2}
+  _bandagePocket: []
   _equippedWeapon: {fileID: 11400000, guid: 5db9603eb200fab44a0345981867aa45, type: 2}
